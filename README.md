@@ -5,8 +5,16 @@
 In the past few years, there has been a surge of interest arXiv:2012.14891v1  [cs.CV]  29 Dec 2020 in multi-modal problems, from image captioning to visual question answering and beyond. In this paper, we focus on hate speech detection in multi-modal memes wherein memes pose an interesting multi-modal fusion problem. We try to solve the Facebook Meme Challenge (Kiela et al., 2020) which aims to solve a binary classification problem of predicting whether a meme is hateful or not. A crucial characteristic of the challenge is that it includes ”benign confounders” to counter the possibility of models exploiting unimodal priors. The challenge states that the state-of-theart models perform poorly compared to humans. During the analysis of the dataset, we realized that majority of the data points which are originally hateful are turned into benign just be describing the image of the meme. Also, majority of the multi-modal baselines give more preference to the hate speech (language modality). To tackle these problems, we explore the visual modality using object detection and image captioning models to fetch the “actual caption” and then combine it with the multi-modal representation to perform binary classification. This approach tackles the benign text confounders present in the dataset to improve the performance. Another approach we experiment with is to improve the prediction with sentiment analysis. Instead of only using multi-modal representations obtained from pre-trained neural networks, we also include the unimodal sentiment to enrich the features. We perform a detailed analysis of the above two approaches, providing compelling reasons in favor of the methodologies used.
 
 
+![Screenshot 2022-01-15 205849](https://user-images.githubusercontent.com/84759422/149627386-61b7605e-c7b7-4fb5-bfa9-b391b9809e3d.png) 
+
+
+
 ### Introduction:
 In today’s world, social media platforms play a major role in influencing people’s everyday life. Though having numerous benefits, it also has the capability of shaping public opinion and religious beliefs across the world. It can be used to attack people directly or indirectly based on race, caste, immigration status, religion, ethnicity, nationality, sex, gender identity, sexual orientation, and disability or disease. Hate Speech on online social media can trigger social polarization, hateful crimes. On large platforms such as Facebook and Twitter, it becomes practically impossible for a human to monitor the source and spreading of such malicious activities, thus it is the responsibility of the machine learning and artificial intelligence research community to address and solve this problem of detecting hate speech efficiently.
+
+
+![Screenshot 2022-01-15 205509](https://user-images.githubusercontent.com/84759422/149627263-e91d94b1-2a6c-4e25-a2fc-359a81f8625d.png)
+
 
 
 This README.txt file describes the dataset "Don't Patronize Me! An Annotated Dataset with Patronizing and Condescending Language towards Vulnerable Communities", an annotated corpus with PCL (Patronizing and Condescending Language) in the newswire domain. The dataset consists of the following files:
@@ -44,7 +52,7 @@ It contains one instance per line with the following format:
 	- {0,1}   = No PCL
 	- {2,3,4} = PCL
 
-
+![Screenshot 2022-01-15 205824](https://user-images.githubusercontent.com/84759422/149627407-a40b994f-e425-4b8d-a539-0bf98a29fd87.png)
 
 -- dontpatronizeme_categories.tsv is the *PCL multilabel classification* dataset. It contains one instance per line with the following format:
 
@@ -61,6 +69,11 @@ It contains one instance per line with the following format:
 	- <number-of-annotators> is the number of annotators agreeing on that label (1 or 2).
   
   
+  
+ ![Screenshot 2022-01-15 205639](https://user-images.githubusercontent.com/84759422/149627297-092580b3-78bc-41c5-8c18-90f13dcf316e.png)
+
+ 
+ 
  ### Image Captioning:
 It tackles the benign text confounders present in the dataset which converts an originally hateful meme into a benign one just by describing what is happening in the image. It shows some of these adversarial samples. They account for 20% of the dataset and thus our hypothesis is that if we can provide our model with this extra knowledge, it will combat these adversarial examples and provide a boost in accuracy. Using object detection and image captioning helps in learning this aspect of the dataset and understanding the behavior of the benign text confounders and thus gives a better performance than the baseline models. Comparing the "actual caption" with the "pre-extracted caption" of the meme will help in understanding whether both are aligned or not. Also, most of the multi-modal baselines tend to focus more on the text modality for the hate speech. Our intuition behind this approach is to find a deeper relationship between the text and the image modalities.
 
