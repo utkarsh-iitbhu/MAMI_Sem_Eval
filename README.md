@@ -18,6 +18,9 @@ In today’s world, social media platforms play a major role in influencing peop
 ![Screenshot 2022-01-15 205509](https://user-images.githubusercontent.com/84759422/149627263-e91d94b1-2a6c-4e25-a2fc-359a81f8625d.png)
 
 
+![Final drawio (2)](https://user-images.githubusercontent.com/84759422/149631107-82cb0eb2-78c3-4c73-8b05-961eecfc1208.png)
+
+
 
 This README.txt file describes the dataset "Don't Patronize Me! An Annotated Dataset with Patronizing and Condescending Language towards Vulnerable Communities", an annotated corpus with PCL (Patronizing and Condescending Language) in the newswire domain. The dataset consists of the following files:
 
